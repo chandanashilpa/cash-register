@@ -7,7 +7,9 @@ var noOfNotesDisplay = document.querySelectorAll(".no-of-notes");
 btnCheck.addEventListener("click", () => {
   // console.log(billAmount.value, typeof cashGiven.value);
   message.style.display = "none";
-  if (billAmount.value < 0) {
+  if (billAmount.value == "" || cashGiven.value == "") {
+    displayMessage("Please enter data into Bill Amount and Cash Given fields");
+  } else if (billAmount.value < 0) {
     displayMessage("Bill Amount should be greater than 0");
   } else {
     if (Number(cashGiven.value) < Number(billAmount.value)) {
