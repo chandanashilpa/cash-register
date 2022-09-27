@@ -9,7 +9,7 @@ btnCheck.addEventListener("click", () => {
   message.style.display = "none";
   if (billAmount.value == "" || cashGiven.value == "") {
     displayMessage("Please enter data into Bill Amount and Cash Given fields");
-  } else if (billAmount.value < 0) {
+  } else if (billAmount.value <= 0) {
     displayMessage("Bill Amount should be greater than 0");
   } else {
     if (Number(cashGiven.value) < Number(billAmount.value)) {
